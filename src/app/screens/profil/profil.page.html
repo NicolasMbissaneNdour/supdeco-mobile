@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Profil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <div style="margin-top: 25px;">
+      <ion-avatar style="margin: auto;">
+        <img [src]="'assets/icon/avatar.svg'" />
+      </ion-avatar>
+      <div style="text-align: center;">
+        <ion-text color="primary">
+          <h1>{{user.prenom}} {{user.nom}}</h1>
+        </ion-text>
+        <ion-text color="primary">
+          <h6><ion-icon name="flag-outline" style="margin-right: 5px;"></ion-icon>{{user.nationalite}}</h6>
+        </ion-text>
+        <ion-text color="primary">
+          <h6><ion-icon name="call-outline" style="margin-right: 5px;"></ion-icon>{{user.telephone}}</h6>
+        </ion-text>
+        <ion-text color="primary" style="align-items: baseline;">
+          <h6><ion-icon name="mail-outline" style="margin-right: 5px;"></ion-icon>{{user.email}}</h6>
+        </ion-text>
+        <ion-button expand="block" style="margin-top: 25;" (click)="onClickEdit()">Editer</ion-button>
+
+      </div>
+    </div>
+    
+  </div>
+</ion-content>

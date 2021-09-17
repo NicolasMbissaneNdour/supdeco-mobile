@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Notes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Notes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-grid fixed>
+      <ion-row style="border-bottom: 1px black solid;">
+        <ion-col size="4"><ion-label color="primary">Libellé</ion-label></ion-col>
+        <ion-col size="4"><ion-label color="primary">Type</ion-label></ion-col>
+        <ion-col size="4"><ion-label color="primary">Note </ion-label></ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: 1px black solid;" *ngFor="let note of notes" (click)="onClickNote(note)">
+        <ion-col size="4">{{note.evaluation.libelle}}</ion-col>
+        <ion-col size="4">{{note.evaluation.type}}</ion-col>
+        <ion-col size="4">{{note.valeur}}</ion-col>
+      </ion-row>
+    </ion-grid>
+<!--     <p *ngFor="let note of notes">{{note.user_id}}-{{note.evaluation_id}}-{{note.valeur}}-{{note.id}}</p> -->
+  </div>
+</ion-content>
